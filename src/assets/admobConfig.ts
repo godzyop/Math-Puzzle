@@ -17,16 +17,16 @@ export const ADMOB_CONFIG = {
   
   // Your Production Ad Unit IDs (replace with your actual AdMob IDs)
   PRODUCTION_AD_UNIT_IDS: {
-    BANNER: 'ca-app-pub-3087035459476299/YOUR_BANNER_AD_UNIT_ID',
-    INTERSTITIAL: 'ca-app-pub-3087035459476299/YOUR_INTERSTITIAL_AD_UNIT_ID', 
-    REWARDED: 'ca-app-pub-3087035459476299/YOUR_REWARDED_AD_UNIT_ID',
+    BANNER: 'ca-app-pub-3087035459476299/4404608111',
+    INTERSTITIAL: 'ca-app-pub-3087035459476299/4404608111', 
+    REWARDED: 'ca-app-pub-3087035459476299/4404608111',
   },
   
   // AdMob App ID (replace with your actual AdMob App ID)
-  APP_ID: 'ca-app-pub-3087035459476299~YOUR_ADMOB_APP_ID',
+  APP_ID: 'ca-app-pub-3087035459476299~9045025850',
   
   // Use test ads during development
-  USE_TEST_ADS: true,
+  USE_TEST_ADS: false,
   
   // Ad settings
   AD_SETTINGS: {
