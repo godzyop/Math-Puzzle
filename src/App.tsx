@@ -1,4 +1,4 @@
-import { AdsManager } from './assets/adsConfig';
+import { adsManager } from './assets/admobConfig';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Play, 
@@ -40,16 +40,16 @@ export default function App() {
   const [lastResult, setLastResult] = useState<'correct' | 'wrong' | null>(null);
   const [isAdLoading, setIsAdLoading] = useState(false);
 
-  const watchAdForCoins = () => {
+  const watchAdForCoins = async () => {
     setIsAdLoading(true);
-    AdsManager.showRewardedAd(() => {
-      setIsAdLoading(false);
-      // Reward logic: Double the coins from the last session or give a flat bonus
-      const bonus = 100;
-      const newTotal = coins + bonus;
-      localStorage.setItem('math_game_coins', newTotal.toString());
-      window.location.reload(); // Refresh to update coin state
-    });
+    const success = await adsManager.showRewardedAd();
+    setIsAdLoading(false);
+    
+    if (success) {
+      // Coins are automatically updated by the ads manager
+      // The UI will update via the coinsUpdated event
+    }
+    window.location.reload(); // Refresh to update coin state
   };
 
   const onAnswer = (option: number) => {
